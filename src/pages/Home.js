@@ -1,7 +1,10 @@
 import { useTitle } from "../hooks/useTitle";
 import { ProductCard } from "../components";
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
 export const Home = () => {
+  let {total} = useContext(CartContext)
   useTitle("Home");
 
   const products = [
@@ -13,8 +16,9 @@ export const Home = () => {
     {"id": 6, "name": "ZEBRONICS Zeb-Thunder Wired", "price": 29, "image": "/assets/images/1006.png"}
   ]
 
-  return (
+  return ( 
     <main>
+      <p>the toal value is : {total} </p>
       <section className="products">
         { products.map((product) => (
           <ProductCard key={product.id} product={product} />
