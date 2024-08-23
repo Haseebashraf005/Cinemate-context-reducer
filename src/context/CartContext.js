@@ -22,8 +22,8 @@ export const CartProvider = ({ children }) => {
 
 // note following will be better if we have multiple context
 // export const useCart = () => {
-    //     return useContext(CartContext); 
+//         return useContext(CartContext); 
     
-    // }
+//     }
     
     export {CartContext};
