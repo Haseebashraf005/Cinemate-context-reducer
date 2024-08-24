@@ -1,10 +1,14 @@
 import { useTitle } from "../hooks/useTitle";
 import { ProductCard } from "../components";
 import { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import { useCart } from "../context/CartContext";
+// import { CartContext } from "../context/CartContext";
 
 export const Home = () => {
-  let {total} = useContext(CartContext)
+  // let {total} = useContext(CartContext)
+
+  const {total} = useCart();
+
   useTitle("Home");
 
   const products = [
@@ -18,7 +22,8 @@ export const Home = () => {
 
   return ( 
     <main>
-      <p>the toal value is : {total} </p>
+      <h1>Cart Items: {products.length} / {total}</h1>
+
       <section className="products">
         { products.map((product) => (
           <ProductCard key={product.id} product={product} />

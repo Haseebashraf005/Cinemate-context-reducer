@@ -4,14 +4,14 @@ const initialState = {
     cartList: [],
     total: 0
 
-}
+} 
 
 
 
 let CartContext = createContext();
 export const CartProvider = ({ children }) => {
     const value = { 
-        total:5000
+        total:500
     }
     return (
         <CartContext.Provider value={value}>
@@ -21,9 +21,9 @@ export const CartProvider = ({ children }) => {
 }
 
 // note following will be better if we have multiple context
-// export const useCart = () => {
-//         return useContext(CartContext); 
+export const useCart = () => {
+        return useContext(CartContext); 
     
-//     }
+    }
     
-    export {CartContext};
+    // export {CartContext};

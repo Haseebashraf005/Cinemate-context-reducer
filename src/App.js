@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Header />
       <AllRoutes />
-      <Counter/>
+      {/* <Counter/> */}
     </div>
   );
 }
