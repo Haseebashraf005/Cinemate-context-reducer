@@ -7,7 +7,7 @@ export const Cart = () => {
   const {total} = useCart();
 
   // let{ total } = useContext(CartContext)
-  console.log(total)
+  // console.log(total)
 
 
 
