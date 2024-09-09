@@ -1,8 +1,8 @@
 import { AllRoutes } from "./routes/AllRoutes";
 import { Header } from "./components";
 import './App.css';
-import Counter from "./reducer/CartReducer";
-import logo from './assets/logo.png'
+// import Counter from "./reducer/CartReducer";
+// import logo from './assets/logo.png'
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       {/* <Counter/> */}
 
       
-    {/* <img src={logo} alt="logo"/>
+    {/* <img src={logo} alt="logo"/> 
     <img src="./assets/images/logo.png" alt="logo"/> */}
     
     </div>

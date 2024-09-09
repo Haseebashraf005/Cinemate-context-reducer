@@ -3,29 +3,34 @@ import { CartReducer } from "../reducer/CartReducer";
 
 const initialState = {
     cartList: [],
-    total: 5
+    total: 0
 }
+
 
 
 let CartContext = createContext(initialState);
 
-   
 export const CartProvider = ({ children }) => {
     
     const [state, dispatch] = useReducer(CartReducer, initialState)
+    
 
     const addToCart = (product) => {
-        const updatedCartList = state.cartList.concat(product)
+        const updatedCartList = state.cartList.concat([product])
+        console.log(updatedCartList)
+        updateTotal(updatedCartList)
         dispatch({ 
             type: "ADD_TO_CART",
-            payload: {
+            payload: { 
                 products: updatedCartList
             }
-        }) 
+        })  
     }
 
     const removeFromCart = (product) => {
         const updatedCartList = state.cartList.filter(current_item_cart => current_item_cart.id !== product.id)
+        updateTotal(updatedCartList)
+
 
         dispatch({
             type: "REMOVE_FROM_CART",
@@ -33,6 +38,18 @@ export const CartProvider = ({ children }) => {
                 products: updatedCartList
             }
         })
+    }
+
+    const updateTotal = (products)=>{ 
+        let total = 0;
+        products.forEach(product => total = total + product.price);
+        dispatch({
+            type: "UpDATE_TOTAL",
+            payload: {
+                total: total
+            }
+        })
+
     }
  
     const value = {

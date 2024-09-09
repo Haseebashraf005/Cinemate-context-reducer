@@ -3,8 +3,8 @@ import "./CartCard.css";
 
 export const CartCard = ({product}) => {
   const {name, price, image} = product;
-
-  const { total, cartList, addToCart, removeFromCart } = useCart();
+  
+  const { removeFromCart } = useCart();
 
   return (
       <div className="cartCard">
